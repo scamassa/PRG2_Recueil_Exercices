@@ -5,7 +5,7 @@
 </details>
 
 ## Exercice 1
-Un palindrome est un texte identique lorsqu’il est lu de gauche à droite et de droite à gauche. Ainsi, le mot radar est un palindrome, de même que les phrases engage le jeu que je le gagne et élu par cette crapule. Normalement, il n’est pas tenu compte des accents, trémas, cédilles ou des espaces. Toutefois, pour cet exercice, nous nous contenterons de vérifier si un mot donné est un palindrome sans tenir compte des majuscules.
+Un palindrome est un texte identique lorsqu’il est lu de gauche à droite et de droite à gauche. Ainsi, le mot radar est un palindrome, de même que les phrases "engage le jeu que je le gagne" et "élu par cette crapule". Normalement, il n’est pas tenu compte des accents, trémas, cédilles ou des espaces. Toutefois, pour cet exercice, nous nous contenterons de vérifier si un mot donné est un palindrome sans tenir compte des majuscules.
 
 Exemple
 - Entrée: _[?] Saisir un mot (que des lettres dans [a-z,A-Z]): Radar_
@@ -13,7 +13,7 @@ Exemple
 
 Exemple 2:
 - Entrée: _baobab_
-- Sortie: _[i] baobab n'est un palindrome_
+- Sortie: _[i] baobab n'est pas un palindrome_
 
 <details>
 <summary>Solution</summary>
@@ -29,10 +29,10 @@ bool palindrome(char *s) {
     size_t len = 0;
 
     // calcul de la longueur de la chaine
-    while (s[len] != '\0') ++len;
+    while (s[len] != '\0') len++;
 
     // test de la symétrie des caractères
-    for (size_t i = 0; i < len; ++i)
+    for (size_t i = 0; i < len; i++)
         if (s[i] != s[len - 1 - i]) return false;
 
     return true;
